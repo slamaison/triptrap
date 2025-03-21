@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Sortie Trip Trap Hotel</title>
+	</head>
+	<body style="text-align: center;">
+		<img style="max-width: 150px;" src="https://triptrapescape.ch/wp-content/uploads/2021/05/jeu-tante-hilda-logo.png">
+		<div id="question" style="margin-top: 30px;">
+			T'as quand même pas cru que ce serait si facile ???<br>
+			Trouves d'abord la réponse à la question pour prouver que tu es digne !
+			<br><br>
+			<i>
+				5 collègues se rassemblent pour faire un escape game.<br>
+				Au moment de partir, chacun fait un bisou à tous les autres.
+				<br><br>
+				Combien de bisous sont échangés ?
+				<br><br>
+				<input id="reponse" type="number" step="1" oninput="this.value = Math.round(this.value);">
+				<br><br>
+				<button id="valider">Valider</button>
+			</i>
+		</div>
+		<div id="lien" style="display: none; margin-top: 30px;">
+			Bien joué ! C'était facile, mais c'est un bon début. Tu peux remplir <a href="">le sondage</a>&nbsp;&#128522;
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.getElementById("reponse").addEventListener("keyup", function(event) {
+		    if (event.key === "Enter") {
+		       valider()
+		    }
+		});
+
+		document.getElementById("valider").addEventListener("click", function (e) {
+		  	valider();
+		});
+
+		function valider(){
+			var rep = document.getElementById("reponse").value;
+		  	if(rep == "10"){
+		  		document.getElementById("question").style.display = "none";
+		  		document.getElementById("lien").style.display = "block";
+		  	}else{
+		  		alert("Ce n'est pas la bonne réponse... réfléchis encore un peu")
+		  	}
+		}
+	</script>
+</html>
